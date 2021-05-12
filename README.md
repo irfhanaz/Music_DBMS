@@ -14,10 +14,9 @@ As per real-life music systems, artists can have a 1 to many relationship with a
 1. Download the full repository.
 2. Go to the directory to which it is stored.
 3. In terminal type: 
-
-| python3 manage.py makemigrations
-| python3 manage.py migrate
-| python3 manage.py runserver
+  - python3 manage.py makemigrations
+  - python3 manage.py migrate
+  - python3 manage.py runserver
 
 
 ### What Songs are in the Playlist Currently?
