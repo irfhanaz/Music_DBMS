@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   My Playlist
+  </title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <html>
+   <head>
+    <style> a:link {
+        background-color: yellow;
+        display: inline-block;
+      }
+      
+      a:visited {
+        background-color: cyan;
+        display: inline-block;
+      }
+      
+      a:hover {
+        background-color: lightgreen;
+        display: inline-block;
+      }
+      
+      a:active {
+        background-color: hotpink;
+        display: inline-block;
+      }  </style>
+    <meta charset="utf-8"/>
+    <title>
+     My Playlist
+    </title>
+   </head>
+   <body>
+    <div class="contain">
+     <div class="container">
+        <h1 style="text-align: center; font-size: 48pt; font-family:Georgia, Times, 'Times New Roman', serif;">Music Management System</h1>
+         <table style="margin-right:auto; margin-top: 10%; margin-left:60px; background-color: white;"> 
+           <thead>
+               <th>MENU</th>
+            </thead>
+            <tr>
+                <td style="border-spacing: 100px;">
+                <h2><a href='/songs/'>Songs in Playlist</a></h2>
+                <h2><a href='/songupload/'>Upload New Song</a></h2>
+                <h2><a href='/searchpage/'>Search</a></h2>
+                </td>
+            </tr>        
+        </table>
+        {% for i,j,k,l,m in mylist %}
+	        <ul> <li style = "color: whitesmoke;"> {{i}} ||  {{j}}  || {{k}} <a href ="/play/?page={{m}}"></style><button type = "button"> Play </button> </a></li></ul>
+	        
+        {% endfor %}
+        
+     </div>
+    </div>
+   </body>
+  </html>
+  <!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
+  </script>
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>

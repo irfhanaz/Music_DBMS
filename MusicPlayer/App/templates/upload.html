@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   My Playlist
+  </title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <html>
+   <head>
+    <style> a:link {
+        background-color: yellow;
+      }
+      
+      a:visited {
+        background-color: cyan;
+      }
+      
+      a:hover {
+        background-color: lightgreen;
+      }
+      
+      a:active {
+        background-color: hotpink;
+      }  </style>
+    <meta charset="utf-8"/>
+    <title>
+     My Playlist
+    </title>
+   </head>
+   <body>
+    <div class="contain">
+     <div class="container">
+        <h1 style="text-align: center; font-size: 48pt; font-family:Georgia, Times, 'Times New Roman', serif;">Music Management System</h1>
+         <table style="margin-right:auto; margin-top: 10%; margin-left:60px; background-color: white;"> 
+           <thead>
+               <th>MENU</th>
+            </thead>
+            <tr>
+                <td style="border-spacing: 100px;">
+                <h2><a href='/songs/'>Songs in Playlist</a></h2>
+                <h2><a href='/songupload/'>Upload New Song</a></h2>
+                <h2><a href='/searchpage/'>Search</a></h2>
+                </td>
+            </tr>        
+        </table>
+        <h1 style="text-align: center;">Add Your Song Here:</h1>
+
+        <form style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold; font-size: larger; color: whitesmoke;" action="add/" method="post" enctype="multipart/form-data">
+        {% csrf_token  %}
+
+        <label>Artist<label>
+        <input type="text" name="artist_name"></input><br />
+        <label>Album<label>
+        <input type="text" name="album_name"></input><br />
+        <label>Song<label>
+        <input type="text" name="title"></input><br />
+        <label>Duration<label>
+        <input type="text" name="duration"></input><br />
+        <label>Audio File</label>
+        <input type = "file" name = "audio_file"></input> <br />
+        <label>Cover Image</label>
+        <input type = "file" name = "image_file"></input> <br />
+        <input type="submit" value="Upload">
+        <br />
+        </form>
+     </div>
+    </div>
+   </body>
+  </html>
+  <!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
+  </script>
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>
