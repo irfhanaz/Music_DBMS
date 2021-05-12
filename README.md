@@ -10,7 +10,13 @@ We created a simple music management system in which the entity sets are artists
 
 As per real-life music systems, artists can have a 1 to many relationship with albums and albums can have a 1 to many relationship with songs!
 
-
+### To run our project:
+1. Download the full repository.
+2. Go to the directory to which it is stored.
+3. In terminal type: 
+| python3 manage.py makemigrations
+| python3 manage.py migrate
+| python3 manage.py runserver
 
 
 ### What Songs are in the Playlist Currently?
